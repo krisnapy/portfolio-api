@@ -7,7 +7,21 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{html,ts,scss}": [
+      "prettier --write"
+    ],
+    "src/**/*.ts": [
+      "eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
     "@strapi/plugin-i18n": "4.9.0",
@@ -18,9 +32,7 @@
     "pg": "^8.10.0",
     "qs": "^6.11.1"
   },
-  "author": {
-    "name": "A Strapi developer"
-  },
+  "author": "A Strapi developer",
   "strapi": {
     "uuid": "5e71f7ad-7beb-4b71-b1c7-62062d59d144"
   },
@@ -28,5 +40,13 @@
     "node": ">=14.19.1 <=18.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.42.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8"
+  },
+  "main": "index.js",
+  "repository": "git@gitlab.com:krisnapy/porfolio-api.git"
 }
