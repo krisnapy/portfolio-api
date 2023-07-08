@@ -7,7 +7,6 @@ linting-check:
   stage: linting
   image: node:latest
   before_script:
-    - npm install -g yarn
     - yarn
   script:
     - echo "Linting Check"
