@@ -8,7 +8,12 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "npx eslint src",
+    "lint:fix": "yarn lint src --fix",
+    "prettier": "npx prettier src --check",
+    "prettier:fix": "yarn prettier src --write",
+    "format": "yarn prettier:fix && yarn lint:fix"
   },
   "lint-staged": {
     "src/**/*.{html,ts,scss}": [
@@ -42,7 +47,11 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.42.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8"
