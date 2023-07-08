@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_skills",
+  "info": {
+    "displayName": "skills",
+    "icon": "cube"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "technologies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::technology.technology"
+    }
+  }
+}

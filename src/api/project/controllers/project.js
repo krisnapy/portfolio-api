@@ -12,12 +12,41 @@ module.exports = createCoreController('api::project.project', ({ strapi }) => ({
 
     const entity = await strapi.entityService.findMany('api::project.project', {
       ...query,
-      populate: ['thumbnail', 'galery'],
+      populate: ['thumbnail', 'gallery'],
     })
 
     const sanitizedEntity = await this.sanitizeOutput(entity, ctx)
 
-    return this.transformResponse(sanitizedEntity)
+    const cleanThumbnail = (thumbnail) => {
+      const { name, url, formats } = thumbnail
+
+      const cleanedThumbnail = {
+        name: name,
+        url: url,
+        lowRes: formats?.small?.url,
+      }
+
+      return cleanedThumbnail
+    }
+
+    const cleanGallery = (gallery) => {
+      const { name, url, formats } = gallery
+
+      const cleanedGallery = {
+        name,
+        url,
+        lowRes: formats?.small?.url,
+      }
+
+      return cleanedGallery
+    }
+
+    sanitizedEntity.forEach((obj) => {
+      obj.thumbnail = cleanThumbnail(obj.thumbnail)
+      obj.gallery = obj.gallery.map(cleanGallery)
+    })
+
+    return { data: sanitizedEntity }
   },
 
   async findOne(ctx) {
@@ -39,8 +68,23 @@ module.exports = createCoreController('api::project.project', ({ strapi }) => ({
       },
     })
 
-    const { results } = await this.sanitizeOutput(entity, ctx)
+    const response = await this.sanitizeOutput(entity, ctx)
 
-    return this.transformResponse(results[0])
+    const results = response.results[0]
+
+    const data = {
+      ...results,
+      thumbnail: {
+        highRes: results.thumbnail.url,
+        lowRes: results.thumbnail.formats.small.url,
+      },
+
+      gallery: {
+        highRes: results.gallery.url,
+        lowRes: results.gallery.formats.small.url,
+      },
+    }
+
+    return this.transformResponse(data)
   },
 }))

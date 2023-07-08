@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_blocks_banners",
+  "info": {
+    "displayName": "banner",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "bannerTitles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::banner-title.banner-title"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

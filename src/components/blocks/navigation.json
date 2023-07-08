@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_navigations",
+  "info": {
+    "displayName": "navigation",
+    "icon": "cube"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string"
+    }
+  }
+}

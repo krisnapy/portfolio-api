@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banner_titles",
+  "info": {
+    "singularName": "banner-title",
+    "pluralName": "banner-titles",
+    "displayName": "Banner Title"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blocks_projects",
+  "info": {
+    "displayName": "projects",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project"
+    },
+    "label": {
+      "type": "string"
+    }
+  }
+}
