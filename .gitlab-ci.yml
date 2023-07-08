@@ -5,40 +5,41 @@ stages:
 
 linting-check:
   stage: linting
-  script:
-    - apt-get update -yq
-    - apt-get install -yq nodejs
-    - apt-get install -yq npm
+  image: node:latest
+  before_script:
     - npm install -g yarn
     - yarn
+  script:
     - echo "Linting Check"
     - yarn lint
-  environment:
-    name: linting
+  environment: linting
   only:
     - main
 
 formatting-check:
   stage: formatting
-  script:
+  image: ubuntu:latest
+  before_script:
     - apt-get update -yq
     - apt-get install -yq nodejs
     - apt-get install -yq npm
+  script:
     - npm install -g yarn
     - yarn
     - echo "Formatting Check"
     - yarn prettier
-  environment:
-    name: formatting
+  environment: formatting
   only:
     - main
 
 deploy-to-production:
   stage: deploy-production
-  script:
+  image: ubuntu:latest
+  before_script:
     - apt-get update -yq
     - apt-get install -yq nodejs
     - apt-get install -yq npm
+  script:
     - npm install -g yarn
     - yarn
     - echo "Deploy to production server"
