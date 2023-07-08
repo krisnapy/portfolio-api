@@ -1,3 +1,6 @@
+variables:
+  NODE_VERSION: 18.16.0
+
 stages:
   - linting
   - formatting
@@ -5,7 +8,7 @@ stages:
 
 Linting Check:
   stage: linting
-  image: node:18.16.0
+  image: node:$NODE_VERSION
   before_script:
     - yarn
   script:
@@ -16,7 +19,7 @@ Linting Check:
 
 formatting-check:
   stage: formatting
-  image: node:18.16.0
+  image: node:$NODE_VERSION
   before_script:
     - yarn
   script:
@@ -27,7 +30,7 @@ formatting-check:
 
 deploy-to-production:
   stage: deploy-production
-  image: node:18.16.0
+  image: node:$NODE_VERSION
   before_script:
     - yarn
   script:
