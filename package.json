@@ -35,7 +35,8 @@
     "@strapi/strapi": "4.11.4",
     "better-sqlite3": "8.0.1",
     "pg": "^8.10.0",
-    "qs": "^6.11.1"
+    "qs": "^6.11.1",
+    "strapi-neon-tech-db-branches": "^0.1.17"
   },
   "author": "A Strapi developer",
   "strapi": {
