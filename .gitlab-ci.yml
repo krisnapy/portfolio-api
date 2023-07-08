@@ -5,8 +5,9 @@ stages:
 
 linting-check:
   stage: linting
-  image: node:latest
+  image: node:18.16.0
   before_script:
+    - if [ -f /.dockerenv ]; then echo "docker-executor"; fi
     - yarn
   script:
     - echo "Linting Check"
