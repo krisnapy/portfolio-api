@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
 /**
  * banner-title service
  */
 
-const { createCoreService } = require('@strapi/strapi').factories;
+const { createCoreService } = require('@strapi/strapi').factories
 
-module.exports = createCoreService('api::banner-title.banner-title');
+module.exports = createCoreService('api::banner-title.banner-title')

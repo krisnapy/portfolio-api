@@ -12,7 +12,7 @@ module.exports = createCoreController('api::project.project', ({ strapi }) => ({
 
     const entity = await strapi.entityService.findMany('api::project.project', {
       ...query,
-      populate: ['thumbnail', 'gallery'],
+      populate: ['thumbnail', 'gallery']
     })
 
     const sanitizedEntity = await this.sanitizeOutput(entity, ctx)
@@ -21,9 +21,9 @@ module.exports = createCoreController('api::project.project', ({ strapi }) => ({
       const { name, url, formats } = thumbnail
 
       const cleanedThumbnail = {
-        name: name,
-        url: url,
-        lowRes: formats?.small?.url,
+        name,
+        url,
+        lowRes: formats?.small?.url
       }
 
       return cleanedThumbnail
@@ -35,7 +35,7 @@ module.exports = createCoreController('api::project.project', ({ strapi }) => ({
       const cleanedGallery = {
         name,
         url,
-        lowRes: formats?.small?.url,
+        lowRes: formats?.small?.url
       }
 
       return cleanedGallery
@@ -59,13 +59,13 @@ module.exports = createCoreController('api::project.project', ({ strapi }) => ({
     const entity = await strapi.service('api::project.project').find({
       ...query,
       populate: {
-        thumbnail: true,
+        thumbnail: true
       },
       withRelated: {
         images: (qb) => {
           qb.columns('data')
-        },
-      },
+        }
+      }
     })
 
     const response = await this.sanitizeOutput(entity, ctx)
@@ -76,15 +76,15 @@ module.exports = createCoreController('api::project.project', ({ strapi }) => ({
       ...results,
       thumbnail: {
         highRes: results.thumbnail.url,
-        lowRes: results.thumbnail.formats.small.url,
+        lowRes: results.thumbnail.formats.small.url
       },
 
       gallery: {
         highRes: results.gallery.url,
-        lowRes: results.gallery.formats.small.url,
-      },
+        lowRes: results.gallery.formats.small.url
+      }
     }
 
     return this.transformResponse(data)
-  },
+  }
 }))

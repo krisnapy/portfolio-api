@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
 /**
  * technology router
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
+const { createCoreRouter } = require('@strapi/strapi').factories
 
-module.exports = createCoreRouter('api::technology.technology');
+module.exports = createCoreRouter('api::technology.technology')

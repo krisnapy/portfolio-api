@@ -16,25 +16,25 @@ module.exports = createCoreController('api::home.home', ({ strapi }) => ({
         skills: {
           populate: {
             technologies: {
-              populate: 'logo',
-            },
-          },
+              populate: 'logo'
+            }
+          }
         },
         banner: {
-          populate: ['bannerTitles', 'image'],
+          populate: ['bannerTitles', 'image']
         },
         projects: {
           populate: {
             projects: {
-              populate: ['thumbnail', 'gallery'],
-            },
-          },
-        },
-      },
+              populate: ['thumbnail', 'gallery']
+            }
+          }
+        }
+      }
     })
 
     const sanitizedEntity = await this.sanitizeOutput(entity, ctx)
 
     return { data: sanitizedEntity }
-  },
+  }
 }))

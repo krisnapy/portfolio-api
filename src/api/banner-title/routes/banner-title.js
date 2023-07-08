@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
 /**
  * banner-title router
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
+const { createCoreRouter } = require('@strapi/strapi').factories
 
-module.exports = createCoreRouter('api::banner-title.banner-title');
+module.exports = createCoreRouter('api::banner-title.banner-title')

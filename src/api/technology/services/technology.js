@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
 /**
  * technology service
  */
 
-const { createCoreService } = require('@strapi/strapi').factories;
+const { createCoreService } = require('@strapi/strapi').factories
 
-module.exports = createCoreService('api::technology.technology');
+module.exports = createCoreService('api::technology.technology')
