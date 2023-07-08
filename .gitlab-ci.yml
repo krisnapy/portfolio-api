@@ -1,8 +1,40 @@
 stages:
-  - deploy
+  - linting
+  - formatting
+  - deploy-production
+
+linting-check:
+  stage: linting
+  script:
+    - apt-get update -yq
+    - apt-get install -yq nodejs
+    - apt-get install -yq npm
+    - npm install -g yarn
+    - yarn
+    - echo "Linting Check"
+    - yarn lint
+  environment:
+    name: linting
+  only:
+    - main
+
+formatting-check:
+  stage: formatting
+  script:
+    - apt-get update -yq
+    - apt-get install -yq nodejs
+    - apt-get install -yq npm
+    - npm install -g yarn
+    - yarn
+    - echo "Formatting Check"
+    - yarn prettier
+  environment:
+    name: formatting
+  only:
+    - main
 
 deploy-to-production:
-  stage: deploy
+  stage: deploy-production
   script:
     - apt-get update -yq
     - apt-get install -yq nodejs
@@ -16,4 +48,3 @@ deploy-to-production:
     url: https://dashboard.render.com/web/srv-$DEPLOY_HOOK_01
   only:
     - main
-
