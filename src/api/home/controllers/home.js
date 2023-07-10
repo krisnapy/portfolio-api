@@ -20,6 +20,9 @@ module.exports = createCoreController('api::home.home', ({ strapi }) => ({
             }
           }
         },
+        pageConfiguration: {
+          populate: ['keywords']
+        },
         banner: {
           populate: ['bannerTitles', 'image']
         },

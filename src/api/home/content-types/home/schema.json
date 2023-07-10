@@ -26,6 +26,11 @@
       "type": "component",
       "repeatable": false,
       "component": "blocks.skills"
+    },
+    "pageConfiguration": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.page-configuration"
     }
   }
 }

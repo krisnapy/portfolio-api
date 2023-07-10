@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_page_configurations",
+  "info": {
+    "displayName": "pageConfiguration",
+    "icon": "cog",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "keywords": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.keyword"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

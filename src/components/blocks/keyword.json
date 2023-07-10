@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_keywords",
+  "info": {
+    "displayName": "keyword",
+    "icon": "key"
+  },
+  "options": {},
+  "attributes": {
+    "keyword": {
+      "type": "string"
+    }
+  }
+}
