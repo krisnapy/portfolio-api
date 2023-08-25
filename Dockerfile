@@ -16,5 +16,8 @@ COPY . .
 
 EXPOSE 1337
 
+# Copy dependencies dari cache
+RUN cp -rfu /cache/node_modules/. /app/node_modules/
+
 # Run the app
-ENTRYPOINT ["/app/start.deploy.sh"]
+CMD [ "yarn",  "start"]
