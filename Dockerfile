@@ -1,4 +1,10 @@
-FROM node:18.17-alpine
+FROM node:18.17-alpine AS builder
+
+# Setup buildtime environment variables
+ARG PUBLIC_URL=https://app-59782.on-aptible.com
+ENV PUBLIC_URL=https://app-59782.on-aptible.com
+ARG ADMIN_URL=https://app-59782.on-aptible.com/admin
+ENV ADMIN_URL=https://app-59782.on-aptible.com/admin
 
 # Add cache directory to install package
 WORKDIR /cache
