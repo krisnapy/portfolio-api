@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 1337
 
 # Run the app
-ENTRYPOINT ["/app/.docker/start.dev.sh"]
+ENTRYPOINT ["/app/start.deploy.sh"]
