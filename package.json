@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "strapi develop",
     "start": "strapi start",
-    "start:prod": "strapi build && yarn start",
+    "start:prod": "yarn build && yarn start",
     "build": "strapi build",
     "strapi": "strapi",
     "prepare": "husky install",

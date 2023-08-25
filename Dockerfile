@@ -8,6 +8,9 @@ COPY package.json .
 COPY yarn.lock .
 RUN yarn install
 
+# Build app
+RUN yarn build
+
 # Add a work directory
 WORKDIR /app
 
@@ -21,4 +24,4 @@ RUN cp -rfu /cache/node_modules/. /app/node_modules/
 EXPOSE 1337
 
 # Run the app
-CMD [ "yarn",  "start:prod"]
+CMD [ "yarn",  "start"]
