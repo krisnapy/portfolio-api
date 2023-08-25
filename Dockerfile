@@ -14,10 +14,11 @@ WORKDIR /app
 # Copy app files
 COPY . .
 
-EXPOSE 1337
-
 # Copy dependencies dari cache
 RUN cp -rfu /cache/node_modules/. /app/node_modules/
 
+# Expose port
+EXPOSE 1337
+
 # Run the app
-CMD [ "yarn",  "start"]
+CMD [ "yarn",  "start:prod"]

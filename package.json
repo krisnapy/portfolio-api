@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "strapi develop",
     "start": "strapi start",
+    "start:prod": "strapi build && yarn start",
     "build": "strapi build",
     "strapi": "strapi",
-    "prepare": "cd .. && husky install front/.husky",
+    "prepare": "husky install",
     "lint": "npx eslint src",
     "lint:fix": "yarn lint src --fix",
     "prettier": "npx prettier src --check",
@@ -22,11 +23,6 @@
     "src/**/*.ts": [
       "eslint --fix"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "dependencies": {
     "@strapi/plugin-i18n": "4.11.4",
@@ -53,7 +49,7 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8"
   },
