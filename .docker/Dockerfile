@@ -1,4 +1,4 @@
-FROM node:18.16.0
+FROM node:18.17-alpine
 
 # Add cache directory to install package
 WORKDIR /cache
