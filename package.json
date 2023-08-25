@@ -8,7 +8,7 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "prepare": "husky install",
+    "prepare": "cd .. && husky install front/.husky",
     "lint": "npx eslint src",
     "lint:fix": "yarn lint src --fix",
     "prettier": "npx prettier src --check",

@@ -16,4 +16,5 @@ COPY . .
 
 EXPOSE 1337
 
-CMD ["yarn", "start" ]
+# Run the app
+ENTRYPOINT ["/app/.docker/start.dev.sh"]
