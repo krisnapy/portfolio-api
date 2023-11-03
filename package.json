@@ -29,6 +29,7 @@
     "@strapi/plugin-users-permissions": "4.11.4",
     "@strapi/provider-upload-cloudinary": "^4.11.4",
     "@strapi/strapi": "4.11.4",
+    "pg": "^8.11.3",
     "qs": "^6.11.1",
     "strapi-neon-tech-db-branches": "^0.1.18"
   },
