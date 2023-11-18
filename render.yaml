@@ -3,6 +3,7 @@ services:
     name: krisna_portfolio
     env: node
     plan: free
+    region: singapore
     buildCommand: yarn install && yarn build
     startCommand: yarn start
     healthCheckPath: /_health
