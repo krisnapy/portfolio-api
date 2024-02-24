@@ -3,12 +3,9 @@ rc: ./.lefthookrc
 pre-commit:
   piped: true
   commands:
-    1-tsc-compilation:
-      glob: '*.{ts,tsx}'
-      run: bun tsc-files --noEmit --pretty {staged_files}
-    2-linting:
+    1-linting:
       glob: '*.{js,ts,tsx}'
-      run: bun eslint {staged_files} --fix && git add {staged_files}
-    3-formating:
+      run: bun run lint && bun run lint:fix
+    2-formatting:
       glob: '*.{js,ts,tsx,css,scss,md,json}'
-      run: bun prettier --write {staged_files} && git add {staged_files}
+      run: bun run prettier && bun run prettier:fix
