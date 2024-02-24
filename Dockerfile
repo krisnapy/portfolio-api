@@ -51,8 +51,8 @@ WORKDIR /cache
 
 # Install dependencies
 COPY package.json .
-COPY yarn.lock .
-RUN yarn config set network-timeout 600000 -g && yarn install
+COPY bun.lockb .
+RUN bun install --timeout 600000
 
 # Add a work directory
 WORKDIR /app
@@ -64,10 +64,10 @@ COPY . .
 RUN cp -rfu /cache/node_modules/. /app/node_modules/
 
 # Run the build
-RUN ["yarn", "build"]
+RUN ["bun",  "run", "build"]
 
 # Expose port
 EXPOSE 1337
 
 # Run the production server
-CMD ["yarn", "start"]
+CMD ["bun", "run", "start"]

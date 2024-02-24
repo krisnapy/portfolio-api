@@ -6,15 +6,15 @@
   "scripts": {
     "dev": "strapi develop",
     "start": "strapi start",
-    "start:prod": "yarn build && yarn start",
+    "start:prod": "bun run build && bun run start",
     "build": "strapi build",
     "strapi": "strapi",
     "prepare": "husky install",
     "lint": "npx eslint src",
-    "lint:fix": "yarn lint src --fix",
+    "lint:fix": "bun run lint src --fix",
     "prettier": "npx prettier src --check",
-    "prettier:fix": "yarn prettier src --write",
-    "format": "yarn prettier:fix && yarn lint:fix"
+    "prettier:fix": "bun run prettier src --write",
+    "format": "bun run prettier:fix && bun run lint:fix"
   },
   "lint-staged": {
     "src/**/*.{html,ts,scss}": [
@@ -50,8 +50,12 @@
     "eslint-plugin-promise": "^6.0.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.2",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "@types/bun": "latest"
   },
   "main": "index.js",
-  "repository": "git@gitlab.com:krisnapy/porfolio-api.git"
+  "repository": "git@gitlab.com:krisnapy/porfolio-api.git",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
 }
