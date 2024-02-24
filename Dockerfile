@@ -52,7 +52,7 @@ WORKDIR /cache
 # Install dependencies
 COPY package.json .
 COPY bun.lockb .
-RUN bun install --timeout 600000
+RUN bun install
 
 # Add a work directory
 WORKDIR /app
