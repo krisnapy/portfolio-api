@@ -52,7 +52,7 @@ WORKDIR /cache
 # Install dependencies
 COPY package.json .
 COPY bun.lockb .
-RUN bun install
+RUN bun install --production
 
 # Add a work directory
 WORKDIR /app

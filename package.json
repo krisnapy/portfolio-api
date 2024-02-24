@@ -9,7 +9,6 @@
     "start:prod": "bun run build && bun run start",
     "build": "strapi build",
     "strapi": "strapi",
-    "prepare": "husky install",
     "lint": "npx eslint src",
     "lint:fix": "bun run lint src --fix",
     "prettier": "npx prettier src --check",
@@ -24,12 +23,16 @@
       "eslint --fix"
     ]
   },
+  "pre-commit": [
+    "format"
+  ],
   "dependencies": {
     "@strapi/plugin-i18n": "^4.15.1",
     "@strapi/plugin-users-permissions": "4.11.4",
     "@strapi/provider-upload-cloudinary": "^4.11.4",
     "@strapi/strapi": "4.11.4",
     "pg": "^8.11.3",
+    "pre-commit": "^1.2.2",
     "qs": "^6.11.1",
     "strapi-neon-tech-db-branches": "^0.1.18"
   },
@@ -43,15 +46,14 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/bun": "latest",
     "eslint": "^8.0.1",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
-    "husky": "^8.0.0",
     "lint-staged": "^13.2.2",
-    "prettier": "^2.8.8",
-    "@types/bun": "latest"
+    "prettier": "^2.8.8"
   },
   "main": "index.js",
   "repository": "git@gitlab.com:krisnapy/porfolio-api.git",
