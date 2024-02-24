@@ -5,7 +5,7 @@ pre-commit:
   commands:
     1-linting:
       glob: '*.{js,ts,tsx}'
-      run: bun run eslint {staged_files}
+      run: bun eslint {staged_files} --fix && git add {staged_files}
     2-formatting:
       glob: '*.{js,ts,tsx,css,scss,md,json}'
-      run: bun run prettier {staged_files}
+      run: bun prettier --write {staged_files} && git add {staged_files}
