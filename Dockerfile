@@ -1,4 +1,4 @@
-FROM node:18.17-alpine AS builder
+FROM oven/bun
 
 # Setup buildtime environment variables
 ARG PUBLIC_URL=${PUBLIC_URL}
